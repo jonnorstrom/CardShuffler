@@ -46,11 +46,7 @@ end
 ## must pass along the original deck, the new deck to compare with,
 ## and the amount of times it's been shuffled
 def continuous_shuffle(organized_deck, new_deck, count)
-  pretty_print(new_deck) ## optional!
+  ## pretty_print(new_deck) ## optional!
   return count if new_deck == organized_deck
   continuous_shuffle(organized_deck, shuffle(new_deck), count+1)
 end
-
-
-################### some runner code ###################
-## let's make our deck here, shuffle it once, and then run the program
