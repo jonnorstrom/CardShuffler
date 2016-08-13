@@ -6,7 +6,7 @@ def make_deck
 
   suits.map do |suit|
     nums.each do |num|
-      deck << "#{num.to_s} of #{suit}"
+      deck << "#{num.to_s} of #{suit}" ## for the pretty_print method
     end
   end
   deck
