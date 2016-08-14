@@ -22,6 +22,14 @@ def half2(deck)
   half2 = deck[26..-1]
 end
 
+def split_deck(deck)
+  halfway = [23, 24, 25, 26, 27].sample
+  new_deck_halfs = []
+  new_deck_halfs << deck[0..halfway]
+  new_deck_halfs << deck[halfway+1..-1]
+  new_deck_halfs
+end
+
 ## does a 'perfect' shuffle on the deck
 def shuffle(deck)
   first_half = half1(deck)
