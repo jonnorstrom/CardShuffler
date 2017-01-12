@@ -1,6 +1,6 @@
 ## makes a deck of cards - standard
 def make_deck
-  nums = (1..13).to_a
+  nums = [*1..13]
   suits = %w{hearts clubs diamonds spades}
   deck = []
 
@@ -24,16 +24,16 @@ end
 
 ## does a 'perfect' shuffle on the deck
 def shuffle(deck)
-  first_half = half1(deck)
-  second_half = half2(deck)
+  splice(half1(deck), half2(deck))
+end
 
-  new_deck = []
-
-  while !first_half.empty?
-    new_deck << first_half.shift
-    new_deck << second_half.shift
+def splice(first_half, second_half)
+  i = 1
+  while second_half[0] do
+    first_half.insert(i, second_half.shift)
+    i += 2
   end
-  new_deck
+  first_half
 end
 
 def pretty_print(deck)
